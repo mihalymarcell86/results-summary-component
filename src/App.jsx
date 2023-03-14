@@ -1,6 +1,6 @@
 import Result from "./components/Result";
 import Summary from "./components/Summary";
-// import Attribution from "./components/Attribution";
+import Attribution from "./components/Attribution";
 
 import styles from "./styles/App.module.css";
 
@@ -11,7 +11,9 @@ function App() {
         <Result />
         <Summary />
       </main>
-      <footer>{/* <Attribution /> */}</footer>
+      <footer className={styles.footer}>
+        <Attribution />
+      </footer>
     </>
   );
 }
