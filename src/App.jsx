@@ -2,7 +2,7 @@ import Result from "./components/Result";
 import Summary from "./components/Summary";
 import Attribution from "./components/Attribution";
 
-import styles from "./styles/App.module.css";
+import styles from "./styles/App.module.scss";
 
 function App() {
   return (

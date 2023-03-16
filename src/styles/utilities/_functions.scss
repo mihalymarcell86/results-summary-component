@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:map";
 @use "variables" as *;
 
 @function color($colorName) {
@@ -6,7 +7,7 @@
 }
 
 // Reset
-@mixin setup {
+@mixin reset {
   :root {
     font-size: math.div($REM, 16) * 1em;
   }
@@ -92,7 +93,7 @@ $unit-table: (
   @return math.div($value, $context) * 1em;
 }
 
-//Font setter
+//Font property shorthand
 @mixin setFont($font-size, $line-height, $font-weight: false) {
   @if unit($font-size) == "px" {
     font-size: rem($font-size);
@@ -103,10 +104,7 @@ $unit-table: (
   }
 
   @if unitless($line-height) {
-    line-height: math.div(
-      $line-height,
-      strip-unit(convertUnit($font-size, px))
-    );
+    line-height: $line-height;
   } @else if unit($line-height) == "px" {
     line-height: math.div($line-height, convertUnit($font-size, px));
   } @else {
@@ -115,5 +113,28 @@ $unit-table: (
 
   @if $font-weight {
     font-weight: $font-weight;
+  }
+}
+
+//Font styles
+@mixin text-style($name, $font-weight: false) {
+  @if map.has-key($text-styles, $name) {
+    $style: $name;
+    $alias: map.get($text-styles, $name, "alias");
+    @if $alias {
+      $style: $alias;
+    }
+    $map: map.get($text-styles, $style);
+    @each $prop, $value in $map {
+      @if $prop == "font-size" {
+        $value: rem($value);
+      }
+      #{$prop}: $value;
+    }
+    @if ($font-weight) {
+      font-weight: $font-weight;
+    }
+  } @else {
+    @error "Style #{$name} not found.";
   }
 }

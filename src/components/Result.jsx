@@ -1,4 +1,4 @@
-import styles from "../styles/Result.module.css";
+import styles from "../styles/Result.module.scss";
 
 export default function Result() {
   return (

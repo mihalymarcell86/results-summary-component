@@ -1,4 +1,4 @@
-import scss from "../styles/Attribution.module.css";
+import scss from "../styles/Attribution.module.scss";
 
 export default function Attribution() {
   return (

@@ -1,0 +1,86 @@
+@use "utilities/global" as *;
+
+.result {
+  background: linear-gradient($light-slate-blue, $light-royal-blue);
+  box-shadow: 0px 30px 60px hsla(224, 82%, 58%, 0.15);
+  border-radius: 0px 0px 32px 32px;
+  padding-block: rem(24px) rem(40px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: $bp1) {
+    padding-block: rem(38px) rem(46px);
+    border-radius: 32px;
+  }
+
+  h1 {
+    color: $light-lavender;
+    @include text-style(HeadingS, 700);
+    margin-bottom: rem(24px);
+    @media (min-width: $bp1) {
+      @include text-style(HeadingM);
+      margin-bottom: rem(35px);
+    }
+  }
+
+  .circle {
+    width: rem(140px);
+    height: rem(140px);
+    background-image: linear-gradient($violet-blue, $persian-blue);
+    border-radius: 50%;
+    margin-inline: auto;
+    margin-bottom: rem(24px);
+    padding-top: rem(25px);
+    text-align: center;
+    @media (min-width: $bp1) {
+      width: rem(200px);
+      height: rem(200px);
+      margin-bottom: rem(28px);
+      padding-top: rem(55px);
+    }
+  }
+
+  .score {
+    @include text-style(HeadingXL, 800);
+    color: $white;
+    @media (min-width: $bp1) {
+      @include text-style(HeadingXXL);
+      margin-bottom: rem(4px);
+    }
+  }
+
+  .outof {
+    @include text-style(BodyS, 700);
+    color: $light-lavender;
+    @media (min-width: $bp1) {
+      @include text-style(Body);
+    }
+  }
+
+  h2 {
+    @include text-style(HeadingM, 700);
+    margin-bottom: rem(8px);
+    color: $white;
+    @media (min-width: $bp1) {
+      @include text-style(HeadingL);
+      margin-bottom: rem(14px);
+    }
+  }
+
+  p {
+    @include text-style(BodyS, 500);
+    color: $light-lavender;
+    max-width: rem(270px);
+    @media (min-width: $bp1) {
+      @include text-style(Body);
+      max-width: rem(240px);
+    }
+  }
+
+  .linebreak {
+    @media (min-width: $bp1) {
+      display: none;
+    }
+  }
+}

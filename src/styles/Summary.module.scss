@@ -1,0 +1,68 @@
+@use "utilities/global" as *;
+@use "sass:color";
+@use "sass:list";
+
+.summary {
+  padding: rem(24px) rem(30px) rem(30px);
+
+  h1 {
+    @include text-style(HeadingS, 700);
+    color: $dark-gray-blue;
+    margin-bottom: rem(24px);
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+    margin-bottom: rem(24px);
+  }
+
+  li {
+    padding: rem(17px) rem(16px) rem(18px);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+
+    $colors: ($light-red, $orangey-yellow, $green-teal, $cobalt-blue);
+
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        $color: list.nth($colors, $i);
+        color: $color;
+        background-color: color.change($color, $alpha: 0.05);
+      }
+    }
+  }
+}
+
+.category {
+  display: flex;
+  gap: rem(12px);
+  align-items: center;
+}
+
+.score_ratio {
+  @include text-style(BodyS, 700);
+  color: color.change($dark-gray-blue, $alpha: 0.5);
+}
+
+.score {
+  color: $dark-gray-blue;
+  margin-right: rem(8px);
+}
+
+button {
+  width: 100%;
+  border: 0;
+  padding-block: rem(17px) rem(16px);
+  border-radius: 128px;
+  color: $white;
+  background-color: $dark-gray-blue;
+  cursor: pointer;
+  @include text-style(Body, 700);
+  &:hover {
+    background-image: linear-gradient($light-slate-blue, $light-royal-blue);
+  }
+}

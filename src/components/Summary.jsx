@@ -1,6 +1,6 @@
 import data from "../data/data.json";
 
-import styles from "../styles/Summary.module.css";
+import styles from "../styles/Summary.module.scss";
 
 function getImageURL(name) {
   return new URL("." + name, import.meta.url).href;
