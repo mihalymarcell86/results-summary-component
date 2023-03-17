@@ -32,6 +32,8 @@ body {
   min-height: 100dvh;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 1;
   @media (min-width: $bp1) {
     align-items: center;
   }

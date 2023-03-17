@@ -62,7 +62,9 @@ button {
   background-color: $dark-gray-blue;
   cursor: pointer;
   @include text-style(Body, 700);
-  &:hover {
+  &:hover,
+  &:focus {
     background-image: linear-gradient($light-slate-blue, $light-royal-blue);
+    outline: 0;
   }
 }

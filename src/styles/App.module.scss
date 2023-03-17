@@ -4,6 +4,8 @@
   width: 100vw;
   max-width: rem(500px);
   background-color: $white;
+  position: relative;
+  z-index: 3;
   @media (min-width: 500px) {
     border-radius: 32px;
   }
@@ -22,6 +24,6 @@
   bottom: 1em;
   left: 50%;
   translate: -50%;
-  z-index: -1;
   width: 90%;
+  z-index: 2;
 }

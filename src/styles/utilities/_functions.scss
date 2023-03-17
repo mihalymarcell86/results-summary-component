@@ -9,7 +9,7 @@
 // Reset
 @mixin reset {
   :root {
-    font-size: math.div($REM, 16) * 1em;
+    font-size: math.div($REM, 16) * 1rem;
   }
 
   *,
