@@ -38,8 +38,8 @@ Desktop
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/mihalymarcell86/results-summary-component](https://github.com/mihalymarcell86/results-summary-component)
+- Live Site URL: [https://results-summary-component-iota-one.vercel.app/](https://results-summary-component-iota-one.vercel.app/)
 
 ## My process
 
